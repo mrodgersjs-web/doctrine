@@ -612,6 +612,16 @@ If a doctrine does not help an agent or human make a better decision, build a be
 
 ---
 
+
+
+## Video walkthrough
+
+- Script: [`docs/video-script.md`](docs/video-script.md)
+- Recording: [`assets/demo.mp4`](assets/demo.mp4) (75s captioned)
+- Preview: [`assets/demo.gif`](assets/demo.gif)
+
+![demo preview](assets/demo.gif)
+
 ## FDE bar (this studio)
 
 | Practice | Here |
