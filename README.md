@@ -608,3 +608,18 @@ Do not merge doctrine because it sounds good. Merge it because it improves agent
 RIG doctrine should make good work easier to repeat.
 
 If a doctrine does not help an agent or human make a better decision, build a better system, avoid a known failure, or produce stronger proof, it should be rewritten, retired, or kept out of the canonical layer.
+
+
+---
+
+## FDE bar (this studio)
+
+| Practice | Here |
+| --- | --- |
+| Employer summary | top of README |
+| Smoke proof | `bash scripts/smoke.sh` |
+| Public boundary | `docs/public-boundary.md` |
+| Claim under test | doctrine markdown present |
+| Fleet | [profile](https://github.com/mrodgersjs-web) · [resume](https://github.com/mrodgersjs-web/resume) · [patents](https://github.com/mrodgersjs-web/patents) |
+
+If `scripts/smoke.sh` fails, treat README claims as false until fixed.
