@@ -1,0 +1,30 @@
+{
+  "build": "4 Doctrines into RIG-Doctrine-Repo",
+  "timestamp": "2026-06-05T18:02:00Z",
+  "doctrines": [
+    "doctrines/PHRONEMA-COMPILED-INTELLIGENCE.md",
+    "doctrines/MTP-SPECULATIVE-DECODING.md",
+    "doctrines/HIGGSFIELD-CINEMATIC-OS.md",
+    "doctrines/GRILL-ME-KNOWLEDGE-EXTRACTION.md"
+  ],
+  "intake": [
+    "intake/phronema-paramount-intake.md",
+    "intake/mtp-speculative-decoding-intake.md",
+    "intake/higgsfield-cinematic-os-intake.md",
+    "intake/grill-me-pro-intake.md"
+  ],
+  "agent_packs": [
+    "agent-packs/phronema-agent-pack.md",
+    "agent-packs/mtp-agent-pack.md",
+    "agent-packs/higgsfield-agent-pack.md",
+    "agent-packs/grill-me-agent-pack.md"
+  ],
+  "source_builds": [
+    "github.com/rodgemd1-lgtm/rig-phronema",
+    "github.com/rodgemd1-lgtm/mtp-inference-studio",
+    "github.com/rodgemd1-lgtm/higgsfield-cinematic-os",
+    "github.com/rodgemd1-lgtm/grill-me-pro"
+  ],
+  "rules": "Each doctrine has 4+ laws, Why section, How to apply, and Gate criteria with planted-failure tests",
+  "done": true
+}

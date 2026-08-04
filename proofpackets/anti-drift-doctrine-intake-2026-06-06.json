@@ -1,0 +1,21 @@
+{
+  "build": "Add anti-drift doctrine intake candidates to doctrine catalog",
+  "timestamp": "2026-06-06T00:00:00Z",
+  "objective": "Record the five user-provided anti-drift doctrines in the repository without falsely promoting them to v10 doctrine.",
+  "changed_surfaces": [
+    "doctrines/README.md",
+    "intake/anchor-doctrine-intake.md",
+    "intake/rig-app-studio-north-star-lock-intake.md",
+    "intake/rig-website-execution-doctrine-intake.md",
+    "intake/gtm-execution-doctrine-intake.md",
+    "intake/ideawake-north-star-doctrine-intake.md"
+  ],
+  "status": "intake_not_promoted",
+  "verification": [
+    "Catalog lists existing promoted doctrine files from doctrines/.",
+    "Catalog lists the five new intake doctrine candidates and marks them as not v10/promoted.",
+    "Each new intake file has frontmatter with source, received date, status:intake, and promoted_to:null."
+  ],
+  "proof_path": "proofpackets/anti-drift-doctrine-intake-2026-06-06.json",
+  "done": true
+}
