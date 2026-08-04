@@ -1,3 +1,22 @@
+# doctrine
+
+> Operating rules agents load before they act — proof standards, gates, and TAC-aligned constraints.
+
+## Employer summary
+Doctrine is the law layer for the studio fleet: what must be true before tools run, what counts as done, and what is forbidden on public surfaces.
+
+## Proof in 60 seconds
+```bash
+git clone https://github.com/mrodgersjs-web/doctrine.git
+cd doctrine
+bash scripts/smoke.sh
+find . -name '*.md' ! -path './.git/*' | head
+```
+
+## Public boundary
+See [docs/public-boundary.md](docs/public-boundary.md).
+
+---
 # RIG Doctrine Repo
 
 RIG Doctrine Repo is the canonical home for RIG operating doctrine: the rules, standards, workflows, build processes, proof requirements, agent instructions, and reusable doctrine packs that make RIG systems behave consistently across Codex, Claude, Susan, Jake, MCP tools, CLIs, QNAP, GitHub, and future agents.
