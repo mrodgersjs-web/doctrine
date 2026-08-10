@@ -1,0 +1,51 @@
+id: uptime_check_alert
+namespace: demo.monitoring
+description: |
+  Poll an HTTP endpoint on a schedule and alert only when it is unhealthy.
+
+  Demonstrates the failure-path-stays-alive pattern: the probe is allowed to fail so
+  that execution reaches the alert task. A probe that aborts the flow can never notify.
+  See doctrines/WORKFLOW-ORCHESTRATION.md laws 1-4.
+
+labels:
+  owner: platform
+  pattern: failure-path-stays-alive
+
+inputs:
+  - id: target_url
+    type: STRING
+    defaults: https://example.com
+    description: Endpoint to probe.
+
+tasks:
+  # allowFailed keeps the execution alive when the endpoint is unreachable or 5xx.
+  # Without it the flow aborts here and the alert below never runs.
+  - id: probe
+    type: io.kestra.plugin.core.http.Request
+    uri: "{{ inputs.target_url }}"
+    method: GET
+    options:
+      allowFailed: true
+
+  # runIf gates the alert on the probe result. The status-code guard is written
+  # defensively: a missing code (connection refused, DNS failure, timeout) is
+  # itself an outage and must alert, so absence is treated as unhealthy.
+  - id: alert
+    type: io.kestra.plugin.core.log.Log
+    runIf: "{{ outputs.probe.code is not defined or outputs.probe.code != 200 }}"
+    level: ERROR
+    message: |
+      UNHEALTHY {{ inputs.target_url }}
+      status={{ outputs.probe.code ?? 'no-response' }}
+      execution={{ execution.id }}
+
+  - id: healthy
+    type: io.kestra.plugin.core.log.Log
+    runIf: "{{ outputs.probe.code is defined and outputs.probe.code == 200 }}"
+    level: INFO
+    message: "OK {{ inputs.target_url }} status={{ outputs.probe.code }}"
+
+triggers:
+  - id: every_five_minutes
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "*/5 * * * *"
