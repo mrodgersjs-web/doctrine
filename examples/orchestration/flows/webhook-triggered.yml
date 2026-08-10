@@ -1,0 +1,34 @@
+id: webhook_triggered
+namespace: demo.patterns
+description: |
+  Event-driven entry point. External systems POST to the webhook URL to start a run.
+
+  Demonstrates triggers-are-part-of-the-definition: the way this flow is invoked is
+  version-controlled alongside what it does, rather than living in an external
+  scheduler that drifts out of sync with the code.
+
+labels:
+  owner: platform
+  pattern: event-driven
+
+tasks:
+  - id: branch_on_event
+    type: io.kestra.plugin.core.flow.If
+    condition: "{{ trigger.body is defined }}"
+    then:
+      - id: handle
+        type: io.kestra.plugin.core.log.Log
+        level: INFO
+        message: "received event for execution {{ execution.id }}"
+    else:
+      - id: empty
+        type: io.kestra.plugin.core.log.Log
+        level: WARN
+        message: "trigger fired with no body"
+
+triggers:
+  # The key is a placeholder. Generate a random value per environment and inject it
+  # from secrets — a webhook key committed to git is a public execution endpoint.
+  - id: inbound
+    type: io.kestra.plugin.core.trigger.Webhook
+    key: "{{ secret('WEBHOOK_KEY') }}"

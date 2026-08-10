@@ -1,7 +1,7 @@
 # doctrine
 
 > Operating rules agents load before they act — proof standards, gates, and TAC-aligned constraints.
-**Outcome:** `bash scripts/smoke.sh` verifies agents can load doctrine across 9 priority domains, 10 scenario contracts, 180 persona contracts, and 12 seed doctrine packages.
+**Outcome:** `bash scripts/smoke.sh` verifies agents can load doctrine across 9 priority domains, 10 scenario contracts, 180 persona contracts, and 12 seed doctrine packages — and validates the runnable orchestration examples, rejecting any unknown Kestra plugin class.
 
 
 ## Employer summary
@@ -11,6 +11,7 @@ Doctrine is the law layer for the studio fleet: what must be true before tools r
 ```bash
 git clone https://github.com/mrodgersjs-web/doctrine.git
 cd doctrine
+pip install -r requirements.txt
 bash scripts/smoke.sh
 find . -name '*.md' ! -path './.git/*' | head
 ```
