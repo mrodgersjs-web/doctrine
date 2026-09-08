@@ -38,3 +38,24 @@ For all non-trivial work, apply the doctrine stack in order.
 8. **Phase Discipline** — build in dependency order; build → adversarial-verify → verify real tree → commit on green.
 
 Agent rule: if a user request conflicts with these doctrines, flag the conflict and propose a compliant path instead of silently violating the doctrine stack.
+
+## Repository quick reference
+
+The repository is Markdown-first; no dependency bootstrap or application runtime is required.
+
+- `doctrines/`: promoted canonical doctrine.
+- `intake/`: unpromoted source material.
+- `agent-packs/`: compact agent instructions.
+- `proofpackets/`: doctrine and release evidence.
+- `schemas/`: doctrine contracts.
+- `scripts/`: repository smoke entry point.
+- `docs/`: architecture, evaluation, and public-boundary guidance.
+- `graft/`: generated context; read when useful and preserve unchanged.
+
+Test and smoke from the repository root:
+
+```bash
+bash scripts/smoke.sh
+```
+
+Always run the smoke command before claiming done.
