@@ -1,0 +1,39 @@
+id: subflow_fanout
+namespace: demo.patterns
+description: |
+  Fan out to a reusable subflow in parallel, then join.
+
+  Demonstrates DRY orchestration: the per-target logic lives in one subflow that is
+  version-controlled once, instead of being copy-pasted per target. This is the
+  runtime half of flows-as-code — see doctrines/WORKFLOW-ORCHESTRATION.md law 5.
+
+labels:
+  owner: platform
+  pattern: dry-subflow
+
+inputs:
+  - id: targets
+    type: JSON
+    defaults: '["https://example.com", "https://example.org"]'
+    description: Endpoints to check concurrently.
+
+tasks:
+  - id: fan_out
+    type: io.kestra.plugin.core.flow.Parallel
+    concurrent: 4
+    tasks:
+      - id: check_each
+        type: io.kestra.plugin.core.flow.Subflow
+        namespace: demo.monitoring
+        flowId: uptime_check_alert
+        # wait+transmitFailed make the parent honest: it blocks on children and
+        # inherits their failure instead of reporting green while a child failed.
+        wait: true
+        transmitFailed: true
+        inputs:
+          target_url: "{{ inputs.targets[0] }}"
+
+  - id: summarize
+    type: io.kestra.plugin.core.log.Log
+    level: INFO
+    message: "fan-out complete for execution {{ execution.id }}"

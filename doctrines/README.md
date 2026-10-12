@@ -24,6 +24,8 @@ Status meanings:
 - `doctrines/PROOF-OR-IT-DIDNT-HAPPEN.md`
 - `doctrines/REPRODUCIBILITY-AND-PINNING.md`
 - `doctrines/RIG-BUILD-METHOD.md`
+- `doctrines/SYSTEMS-THINKING.md`
+- `doctrines/WORKFLOW-ORCHESTRATION.md`
 
 ## Intake doctrine candidates added 2026-06-06
 
