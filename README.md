@@ -24,7 +24,7 @@ pip install -e '.[dev]'
 rig-doctrine validate                    # whole corpus, exit 0 when clean
 rig-doctrine list --kind doctrine        # 15 doctrine texts + catalog
 rig-doctrine show gate-d                 # one record, sections + body
-pytest -q                                # 29 tests
+pytest -q                                # 33 tests
 ```
 
 ## Usage
@@ -114,4 +114,4 @@ notes are kept for context in [docs/internal.md](docs/internal.md); where they
 describe an external baseline, that baseline is not verifiable from this
 repository.
 
-Built by Mike Rodgers · [rodgersintelligence.com](https://rodgersintelligence.com/)
+Built by Mike Rodgers · rodgersintelligence.com

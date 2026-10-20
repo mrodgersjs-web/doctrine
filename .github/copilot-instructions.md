@@ -1,33 +1,50 @@
 # Copilot instructions
 
-## Repository purpose
+## What this repo is
 
-`doctrine` is the canonical, Markdown-first law layer for RIG agents: operating rules, proof standards, gates, reusable agent packs, and the intake-to-promotion boundary.
+`doctrine` is the Markdown-first law layer for RIG agents: operating rules,
+proof standards, approval gates, reusable agent packs, and the boundary between
+unpromoted intake and promoted doctrine. The `rig_doctrine` Python package
+loads that corpus and the `rig-doctrine` CLI validates it, so a broken link or
+a malformed intake record fails CI instead of quietly rotting.
 
-## Work map
+## Layout
 
-- `doctrines/`: promoted canonical doctrine.
-- `intake/`: unpromoted source material.
-- `agent-packs/`: compact agent-facing instruction bundles.
-- `proofpackets/`: doctrine and release evidence.
-- `schemas/`: doctrine contract schemas.
-- `scripts/`: repository smoke entry point.
-- `docs/`: architecture, evaluation, and public-boundary guidance.
-- `graft/`: generated context; read when needed and leave unchanged.
+- `doctrines/` - promoted canonical doctrine (15 texts plus a catalog).
+- `intake/` - unpromoted source material, kept separate on purpose.
+- `agent-packs/` - compact agent-facing instruction bundles.
+- `proofpackets/` - doctrine and release evidence.
+- `schemas/` - doctrine contract schemas.
+- `src/rig_doctrine/` - package: `loader.py`, `model.py`, `validator.py`, `cli.py`.
+- `tests/` - pytest suite: loader, validator, CLI, corpus, repo hygiene.
+- `examples/validate_repo.py` - runnable example, executed by the suite and CI.
+- `docs/` - architecture, evaluation strategy, usage, public boundary.
+- `scripts/smoke.sh` - the smoke entry point.
 
 ## Commands
 
-No dependency bootstrap or application runtime is required. Test and smoke from the repository root:
+Run from the repository root in a virtual environment:
 
 ```bash
-bash scripts/smoke.sh
+pip install -e '.[dev]'      # installs pytest, pytest-cov, ruff
+ruff check .                 # lint
+rig-doctrine validate        # whole corpus, exit 0 when clean
+pytest -q                    # full test suite
+pytest -q --cov=rig_doctrine # tests with coverage
+bash scripts/smoke.sh        # smoke
 ```
 
-## Editing rules
+## Conventions
 
-- Treat doctrine as executable guidance, not decorative prose.
-- Keep raw intake separate from promoted doctrine. Promotion needs source evidence, agent instructions, tests, proof requirements, and a versioned path.
-- Apply `doctrines/GLOBAL-OPERATING-RULES.md` to non-trivial work.
-- Keep credentials, secrets, private client material, and unsourced public claims out of the repository.
-- Never weaken Gate-D, adversarial verification, public-boundary, or reproducibility requirements.
-- Always run the smoke command before claiming done.
+- Conventional commit messages: `feat:`, `fix:`, `test:`, `docs:`, `ci:`, `chore:`.
+- Every behavior change lands with a test that exercises it and passes on a clean install.
+- Doctrine is executable guidance, not decorative prose. Promotion from `intake/` to `doctrines/` needs source evidence, agent instructions, tests, proof requirements, and a versioned path.
+- No secrets, credentials, or private client material in any tracked file. No machine paths such as `/Users/...` or `~/Developer/...`.
+- Never weaken the Gate-D, adversarial-verification, public-boundary, or reproducibility requirements while editing.
+
+## Truth rule
+
+Any number in docs, comments, or commit messages must come from a command run in
+this repository, for example a doctrine count from `rig-doctrine list --kind
+doctrine` or a test count from `pytest -q`. Quote the command and its output
+rather than a memory of it.
