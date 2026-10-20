@@ -1,8 +1,8 @@
 # RIG BUILD METHOD — the engineering engine for every product
 
 **RULE, going forward, no exceptions.** Every product/service RIG builds runs this method.
-It is the engineering counterpart to [RIG-DESIGN-METHOD](./RIG-DESIGN-METHOD.md) (the
-sell/craft track). Both sit on the same root spine, **[IQRSQPI](./IQRSQPI-DOCTRINE.md)**
+It is the engineering counterpart to RIG-DESIGN-METHOD (the
+sell/craft track). Both sit on the same root spine, **[IQRSQPI](./IQRSQPI-ENGINEERING.md)**
 (design) / **[IQRSQPI-ENGINEERING](./IQRSQPI-ENGINEERING.md)** (build). The cure never
 ships before the diagnosis is researched; nothing advances on a guess; proof or it
 didn't happen.
@@ -42,4 +42,4 @@ didn't happen.
 
 ---
 *Version 1 · 2026-06-05 · the engineering track of the RIG method. Pairs with
-RIG-DESIGN-METHOD. Globalized via `~/.claude/rules/rig-build-doctrine.md`.*
+RIG-DESIGN-METHOD.*

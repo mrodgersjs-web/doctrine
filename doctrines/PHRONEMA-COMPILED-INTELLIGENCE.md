@@ -36,7 +36,7 @@ The build card v1 was an Obsidian vault fed by a scraper — passive, no gates, 
 - Each pipeline stage is a separate Python class/module with its own adversarial planted-failure test.
 - The ConductorAgent orchestrates the daily 08:00 cycle — it does not create intelligence, it dispatches the deterministic pipeline and collects ProofPackets.
 - Every source gets a ledger row tracking its stage. Render the ledger as markdown for Obsidian consumption.
-- Before promoting anything to "1000x": get it running (service up, pipeline executing), wire to RIG toolchain (cron, `rig`, `gh`), add self-healing, add tests, then document with a ProofPacket. Not the reverse order.
+- Before promoting anything to top tier: get it running (service up, pipeline executing), wire to RIG toolchain (cron, `rig`, `gh`), add self-healing, add tests, then document with a ProofPacket. Not the reverse order.
 
 ## Gate criteria
 

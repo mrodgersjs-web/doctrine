@@ -11,7 +11,7 @@ The first version of this repo should answer four practical questions:
 1. What doctrines does RIG follow?
 2. How does an AI coding agent load and obey those doctrines?
 3. How does a raw insight become a durable doctrine?
-4. What would a 1000x better doctrine system look like?
+4. What would a much better doctrine system look like?
 
 The current source baseline comes from the RIG Vault v10 work inside `Startup-Intelligence-OS`, including:
 
@@ -80,9 +80,9 @@ Raw material should start in `intake/` or in the external RIG Vault intake lane,
     +-- future CLI, MCP, validators, generators, and exporters
 ```
 
-## What A 1000x Better Version Looks Like
+## What A Much Better Version Looks Like
 
-A 1000x better RIG Doctrine Repo is not a bigger README. It is a living doctrine operating system.
+A much better RIG Doctrine Repo is not a bigger README. It is a living doctrine operating system.
 
 ### 1. Every Doctrine Is Agent-Executable
 
@@ -198,7 +198,7 @@ Success metric:
 
 ### 10. Doctrine Becomes A RIG Product Layer
 
-The 1000x version can be used as:
+The much better version can be used as:
 
 - internal operating system
 - AI agent instruction layer

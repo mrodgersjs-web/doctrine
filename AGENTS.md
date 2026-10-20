@@ -50,12 +50,13 @@ The repository is Markdown-first; no dependency bootstrap or application runtime
 - `schemas/`: doctrine contracts.
 - `scripts/`: repository smoke entry point.
 - `docs/`: architecture, evaluation, and public-boundary guidance.
-- `graft/`: generated context; read when useful and preserve unchanged.
 
-Test and smoke from the repository root:
+Test and validate from the repository root:
 
 ```bash
-bash scripts/smoke.sh
+bash scripts/smoke.sh        # corpus validation
+rig-doctrine validate        # the same check directly
+pytest -q                    # package tests plus corpus schema checks
 ```
 
-Always run the smoke command before claiming done.
+Always run these before claiming done.

@@ -14,9 +14,9 @@ most interesting adjacent one, not the one the latest uploaded document implies,
 that emerged from its own mid-task momentum. Scope moves only by explicit, named decision —
 never by drift.
 
-This is the enforcement layer on top of [INTENT](./INTENT.md): INTENT says write the goal down;
+This is the enforcement layer on top of [INTENT](../doctrines/INTENT.md): INTENT says write the goal down;
 NORTH-STAR-LOCK keeps the written goal from being silently displaced. It is a sibling to
-[PROOF-OR-IT-DIDNT-HAPPEN](./PROOF-OR-IT-DIDNT-HAPPEN.md) and [PHASE-DISCIPLINE](./PHASE-DISCIPLINE.md).
+[PROOF-OR-IT-DIDNT-HAPPEN](../doctrines/PROOF-OR-IT-DIDNT-HAPPEN.md) and [PHASE-DISCIPLINE](../doctrines/PHASE-DISCIPLINE.md).
 
 > Born 2026-06-05 from a 3-day session that opened on "is my build factory producing good code
 > or noise — it's a trust problem" and closed, four new products later, on the same unsolved
