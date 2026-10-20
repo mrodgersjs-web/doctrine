@@ -90,7 +90,7 @@ docs/               architecture, usage depth, public boundary
 
 ```bash
 pip install -e '.[dev]'
-ruff check src tests
+ruff check .
 pytest -q --cov=rig_doctrine
 ```
 
